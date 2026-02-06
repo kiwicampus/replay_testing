@@ -263,6 +263,7 @@ class ReplayTestingRunner:
                     def setUp(inner_self):
                         super().setUp()  # Call original setUp if it exists
                         inner_self.reader = reader
+                        inner_self.run_fixture_path = run_fixture.path
                         inner_self.suite_classname = analyze_cls.__name__
 
                 suite = unittest.TestLoader().loadTestsFromTestCase(AnalyzeWithReader)
