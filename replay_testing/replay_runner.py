@@ -142,7 +142,7 @@ class ReplayTestingRunner:
         # Launch description
         ld = LaunchDescription([
             ExecuteProcess(
-                cmd=['ros2', 'bag', 'record', '-s', 'mcap', '-o', str(run_fixture.path), '--all'],
+                cmd=['ros2', 'bag', 'record', '-s', 'mcap', '-o', str(run_fixture.path), '--all', '--storage-preset-profile', 'zstd_fast'],
                 output='screen',
             ),
             test_ld,
